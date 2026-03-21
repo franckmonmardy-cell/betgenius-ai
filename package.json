@@ -1,0 +1,14 @@
+{
+  "name": "betgenius-ai",
+  "version": "1.0.0",
+  "description": "BetGenius AI Paris sportifs live",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {},
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  }
+}
