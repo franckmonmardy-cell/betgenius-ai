@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>BetGenius AI — Paris Sportifs Live</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06090f;--surface:#0b1017;--card:#10161f;--card2:#141d2a;
+  --border:#1a2840;--accent:#00e5ff;--gold:#ffd600;--gold2:#ffaa00;
+  --green:#00e676;--red:#ff1744;--orange:#ff9100;
+  --text:#ddeeff;--muted:#4a6a8a;
+  --glow:0 0 18px rgba(0,229,255,.2);--gg:0 0 16px rgba(255,214,0,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;min-height:100vh;max-width:430px;margin:0 auto;overflow-x:hidden;}
+.hdr{background:linear-gradient(180deg,#08121e,var(--bg));padding:12px 13px 0;position:sticky;top:0;z-index:200;border-bottom:1px solid var(--border);}
+.hdr-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:23px;letter-spacing:3px;color:var(--accent);}
+.logo span{color:var(--gold);}
+.badge-live{background:var(--red);color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:2px;letter-spacing:1px;animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.badge-api{font-size:8px;padding:2px 7px;border-radius:3px;font-family:'Share Tech Mono',monospace;letter-spacing:1px;border:1px solid;}
+.tabs{display:flex;overflow-x:auto;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{flex-shrink:0;padding:8px 12px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap;font-family:'Share Tech Mono',monospace;}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent);}
+.page{display:none;padding:12px;}
+.page.active{display:block;}
+.lgs{display:flex;overflow-x:auto;scrollbar-width:none;gap:5px;margin-bottom:11px;}
+.lgs::-webkit-scrollbar{display:none;}
+.lc{flex-shrink:0;padding:4px 11px;border-radius:18px;font-size:10px;font-weight:700;border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all .2s;font-family:'Share Tech Mono',monospace;white-space:nowrap;}
+.lc.active{background:rgba(0,229,255,.1);border-color:var(--accent);color:var(--accent);}
+.hero{background:linear-gradient(135deg,#0a1f3a,#06101e);border:1px solid var(--gold);border-radius:13px;padding:13px;margin-bottom:12px;position:relative;overflow:hidden;box-shadow:var(--gg);}
+.h-tag{font-size:9px;color:var(--gold2);letter-spacing:2px;font-family:'Share Tech Mono',monospace;margin-bottom:4px;}
+.h-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:#fff;margin-bottom:3px;}
+.h-sub{font-size:11px;color:var(--muted);margin-bottom:9px;}
+.h-pills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px;}
+.hp{font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;border:1px solid;}
+.hp-r{color:var(--red);border-color:rgba(255,23,68,.3);background:rgba(255,23,68,.06);}
+.hp-g{color:var(--green);border-color:rgba(0,230,118,.3);background:rgba(0,230,118,.06);}
+.hp-a{color:var(--accent);border-color:rgba(0,229,255,.3);background:rgba(0,229,255,.06);}
+.hp-o{color:var(--orange);border-color:rgba(255,145,0,.3);background:rgba(255,145,0,.06);}
+.rbtn{padding:7px 13px;background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.25);border-radius:7px;color:var(--accent);font-family:'Share Tech Mono',monospace;font-size:10px;cursor:pointer;margin-right:5px;}
+.mc{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:9px;overflow:hidden;transition:all .18s;position:relative;}
+.mc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;}
+.mc-L::before{background:var(--red);}
+.mc-U::before{background:var(--green);}
+.mc-F::before{background:var(--muted);}
+.mc-hd{display:flex;justify-content:space-between;align-items:center;padding:7px 12px 5px;}
+.mc-lg{font-size:9px;color:var(--muted);font-family:'Share Tech Mono',monospace;display:flex;align-items:center;gap:4px;}
+.mc-lg img{width:12px;height:12px;object-fit:contain;}
+.st{font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;font-family:'Share Tech Mono',monospace;}
+.sL{background:rgba(255,23,68,.15);color:var(--red);border:1px solid rgba(255,23,68,.3);}
+.sU{background:rgba(0,230,118,.08);color:var(--green);border:1px solid rgba(0,230,118,.2);}
+.sF{background:rgba(74,106,138,.08);color:var(--muted);border:1px solid var(--border);}
+.sH{background:rgba(255,145,0,.1);color:var(--orange);border:1px solid rgba(255,145,0,.25);}
+.mc-bd{padding:0 12px 10px;}
+.mc-tm{display:flex;align-items:center;gap:6px;margin-bottom:8px;}
+.tm{flex:1;display:flex;align-items:center;gap:7px;}
+.tm.rv{flex-direction:row-reverse;}
+.tl{width:28px;height:28px;border-radius:50%;object-fit:contain;background:rgba(255,255,255,.04);padding:3px;flex-shrink:0;}
+.tn{font-size:13px;font-weight:700;color:var(--text);line-height:1.2;}
+.sc-b{text-align:center;min-width:62px;}
+.sc{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--gold);letter-spacing:2px;line-height:1;}
+.sc-s{font-size:9px;color:var(--muted);font-family:'Share Tech Mono',monospace;margin-top:1px;}
+.o3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;margin-bottom:6px;}
+.ob{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:7px;padding:6px 4px;text-align:center;cursor:pointer;transition:all .18s;}
+.ob:hover,.ob.sel{border-color:var(--gold);background:rgba(255,214,0,.1);}
+.ob-l{font-size:8px;color:var(--muted);font-family:'Share Tech Mono',monospace;margin-bottom:2px;}
+.ob-v{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--gold);}
+.ob-p{font-size:8px;color:var(--green);font-family:'Share Tech Mono',monospace;}
+.o2{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:7px;}
+.ob2{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:7px;padding:6px 8px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.ob2:hover,.ob2.sel{border-color:var(--accent);background:rgba(0,229,255,.07);}
+.ob2-n{font-size:10px;color:var(--muted);}
+.ob2-v{font-family:'Bebas Neue',sans-serif;font-size:15px;color:var(--accent);}
+.ai-s{background:linear-gradient(90deg,rgba(0,229,255,.06),rgba(0,229,255,.02));border:1px solid rgba(0,229,255,.18);border-radius:7px;padding:7px 10px;display:flex;align-items:center;justify-content:space-between;}
+.ai-st{font-size:11px;font-weight:700;color:var(--accent);}
+.ai-sb{width:65px;height:3px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;margin-top:2px;}
+.ai-sf{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--green),var(--accent));}
+.ai-sr{text-align:right;}
+.ai-sc{font-family:'Bebas Neue',sans-serif;font-size:15px;color:var(--gold);}
+.ai-sp{font-size:8px;color:var(--muted);font-family:'Share Tech Mono',monospace;}
+.cbox{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px;}
+.cb-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.cb-t{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;color:var(--accent);}
+.cb-c{font-size:9px;color:var(--muted);font-family:'Share Tech Mono',monospace;}
+.ci{display:flex;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);}
+.ci:last-child{border-bottom:none;}
+.ci-i{flex:1;}.ci-m{font-size:12px;font-weight:700;color:var(--text);}
+.ci-p{font-size:10px;color:var(--accent);}
+.ci-c{font-family:'Bebas Neue',sans-serif;font-size:17px;color:var(--gold);margin:0 7px;}
+.ci-d{color:var(--red);cursor:pointer;font-size:15px;padding:2px;}
+.ct{display:flex;justify-content:space-between;align-items:center;padding:8px 0 0;margin-top:5px;border-top:2px solid rgba(255,214,0,.2);}
+.ct-l{font-size:9px;color:var(--muted);font-family:'Share Tech Mono',monospace;}
+.ct-v{font-family:'Bebas Neue',sans-serif;font-size:25px;color:var(--gold);}
+.ct-g{font-family:'Bebas Neue',sans-serif;font-size:17px;color:var(--green);}
+.cbtns{display:flex;gap:7px;margin-top:9px;}
+.bdl{flex:2;padding:11px;background:linear-gradient(90deg,var(--gold2),var(--gold));border:none;border-radius:8px;color:#06090f;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:2px;cursor:pointer;}
+.bclr{flex:1;padding:11px;background:rgba(255,23,68,.08);border:1px solid rgba(255,23,68,.25);border-radius:8px;color:var(--red);font-family:'Bebas Neue',sans-serif;font-size:13px;cursor:pointer;}
+.empty{text-align:center;padding:18px;color:var(--muted);font-size:11px;font-family:'Share Tech Mono',monospace;line-height:1.7;}
+.aibox{background:linear-gradient(135deg,#0e1e35,#0a1525);border:1px solid var(--accent);border-radius:12px;padding:12px;margin-bottom:12px;}
+.ai-lbl{font-size:9px;letter-spacing:2px;color:var(--accent);font-family:'Share Tech Mono',monospace;margin-bottom:7px;}
+.ai-row{display:flex;gap:7px;}
+.ai-inp{flex:1;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:7px;padding:9px 11px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:13px;outline:none;resize:none;height:40px;}
+.ai-inp:focus{border-color:var(--accent);}
+.ai-inp::placeholder{color:var(--muted);}
+.ai-go{background:var(--accent);color:var(--bg);border:none;border-radius:7px;width:40px;height:40px;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;}
+.ai-resp{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);display:none;}
+.ai-resp.vis{display:block;}
+.ai-think{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:11px;font-family:'Share Tech Mono',monospace;}
+.dots span{display:inline-block;width:4px;height:4px;background:var(--accent);border-radius:50%;animation:bo .8s infinite;margin:0 1px;}
+.dots span:nth-child(2){animation-delay:.15s}.dots span:nth-child(3){animation-delay:.3s}
+@keyframes bo{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.ai-out{font-size:12px;line-height:1.65;color:var(--text);display:none;}
+.ai-out.vis{display:block;}
+.cdb{background:linear-gradient(135deg,#0a1830,#050e1a);border:1px solid rgba(0,229,255,.3);border-radius:9px;padding:10px 13px;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between;}
+.cd-l{font-size:8px;color:var(--muted);letter-spacing:2px;font-family:'Share Tech Mono',monospace;margin-bottom:3px;}
+.cd-v{font-family:'Share Tech Mono',monospace;font-size:16px;font-weight:700;color:var(--accent);letter-spacing:3px;}
+.cd-cp{background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.28);border-radius:5px;padding:6px 10px;color:var(--accent);font-family:'Share Tech Mono',monospace;font-size:10px;cursor:pointer;}
+.cd-cp.done{background:rgba(0,230,118,.1);border-color:rgba(0,230,118,.3);color:var(--green);}
+.lcard{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;text-align:center;margin-bottom:9px;}
+.spin{display:inline-block;width:22px;height:22px;border:2px solid rgba(0,229,255,.15);border-top-color:var(--accent);border-radius:50%;animation:sp .7s linear infinite;margin-bottom:8px;}
+@keyframes sp{to{transform:rotate(360deg)}}
+.ltxt{font-size:11px;color:var(--muted);font-family:'Share Tech Mono',monospace;line-height:1.7;}
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:500;display:none;align-items:flex-end;justify-content:center;}
+.mo.open{display:flex;}
+.mdl{background:var(--card2);border:1px solid var(--border);border-top:2px solid var(--gold);border-radius:16px 16px 0 0;width:100%;max-width:430px;padding:17px;max-height:88vh;overflow-y:auto;}
+.mdl-h{width:40px;height:4px;background:var(--border);border-radius:2px;margin:0 auto 12px;}
+.mdl-t{font-family:'Bebas Neue',sans-serif;font-size:19px;color:var(--gold);margin-bottom:3px;}
+.mdl-s{font-size:11px;color:var(--muted);margin-bottom:12px;}
+.mrows{background:var(--card);border:1px solid rgba(255,214,0,.18);border-radius:9px;margin-bottom:10px;}
+.mrow{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-bottom:1px solid var(--border);}
+.mrow:last-child{border-bottom:none;}
+.mr-m{font-size:12px;font-weight:700;color:var(--text);}
+.mr-p{font-size:10px;color:var(--accent);}
+.mr-c{font-family:'Bebas Neue',sans-serif;font-size:17px;color:var(--gold);}
+.mtot{display:flex;justify-content:space-between;align-items:center;background:rgba(255,214,0,.05);border:1px solid rgba(255,214,0,.18);border-radius:7px;padding:10px;margin-bottom:12px;}
+.mt-c{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--gold);}
+.mt-g{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--green);}
+.dlg{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:7px;}
+.dlb{padding:11px;border-radius:8px;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:1px;cursor:pointer;text-align:center;}
+.dlb-t{background:linear-gradient(90deg,var(--gold2),var(--gold));color:#06090f;border:none;}
+.dlb-h{background:rgba(0,150,255,.08);border:1px solid rgba(0,150,255,.25);color:#7ecfff;}
+.dlb-x{width:100%;padding:10px;background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:13px;cursor:pointer;}
+.bnav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:var(--surface);border-top:1px solid var(--border);display:flex;padding:7px 0 14px;z-index:100;}
+.ni{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;}
+.ni-i{font-size:19px;}
+.ni-l{font-size:9px;font-weight:700;color:var(--muted);font-family:'Share Tech Mono',monospace;}
+.ni.active .ni-l{color:var(--accent);}
+.toast{position:fixed;bottom:84px;left:50%;transform:translateX(-50%) translateY(8px);background:var(--green);color:#000;padding:8px 16px;border-radius:18px;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:1px;opacity:0;transition:all .3s;z-index:1000;pointer-events:none;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.spacer{height:80px;}
+.disc{text-align:center;font-size:9px;color:var(--muted);padding:8px;opacity:.5;font-family:'Share Tech Mono',monospace;}
+.sec{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:2px;color:var(--text);margin-bottom:9px;display:flex;align-items:center;gap:8px;}
+.sec::after{content:'';flex:1;height:1px;background:var(--border);}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-top">
+    <div style="display:flex;align-items:center;gap:7px;">
+      <div class="logo">Bet<span>Genius</span> AI</div>
+      <div class="badge-api" id="apiBadge" style="color:var(--orange);border-color:rgba(255,145,0,.35);background:rgba(255,145,0,.08);">⏳ CONNEXION</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:5px;">
+      <span style="font-size:9px;color:var(--muted);font-family:'Share Tech Mono',monospace" id="hDate"></span>
+      <div class="badge-live">● LIVE</div>
+    </div>
+  </div>
+  <div class="tabs">
+    <div class="tab active" onclick="switchPage('live',this)">⚽ Live</div>
+    <div class="tab" onclick="switchPage('coupon',this)">🎫 Coupon</div>
+    <div class="tab" onclick="switchPage('ia',this)">🤖 IA</div>
+  </div>
+</div>
