@@ -1,22 +1,36 @@
 {
   "version": 2,
   "name": "betgenius-ai",
-  "functions": {
-    "api/*.js": {
-      "memory": 256,
-      "maxDuration": 10
+  "builds": [
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/index.html",
+      "use": "@vercel/static"
     }
-  },
+  ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1",
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type"
-      }
+      "src": "/api/fixtures",
+      "dest": "/api/fixtures.js"
     },
-    { "src": "/(.*)", "dest": "/public/$1" }
+    {
+      "src": "/api/live",
+      "dest": "/api/live.js"
+    },
+    {
+      "src": "/api/predictions",
+      "dest": "/api/predictions.js"
+    },
+    {
+      "src": "/api/status",
+      "dest": "/api/status.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/index.html"
+    }
   ]
 }
