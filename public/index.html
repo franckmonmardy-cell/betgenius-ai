@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,35 +21,38 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;ma
 .tab.on{color:var(--accent);border-bottom-color:var(--accent);}
 .pg{display:none;padding:12px;}
 .pg.on{display:block;}
-
-/* SEARCH */
 .srch-wrap{position:relative;margin-bottom:10px;}
 .srch-inp{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:10px 36px;color:var(--text);font-family:'Rajdhani';font-size:13px;font-weight:600;outline:none;transition:border-color .2s;}
-.srch-inp:focus{border-color:var(--accent);background:rgba(0,229,255,.03);}
+.srch-inp:focus{border-color:var(--accent);}
 .srch-inp::placeholder{color:var(--muted);}
 .srch-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:14px;}
 .srch-clr{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:none;border-radius:50%;width:20px;height:20px;color:var(--muted);cursor:pointer;font-size:11px;display:none;align-items:center;justify-content:center;}
 .srch-clr.vis{display:flex;}
 .srch-count{font-size:9px;color:var(--muted);font-family:'Share Tech Mono';margin-bottom:8px;text-align:right;}
-
-/* SPORT TABS */
 .stabs{display:flex;overflow-x:auto;gap:5px;margin-bottom:9px;scrollbar-width:none;padding-bottom:2px;}
 .stabs::-webkit-scrollbar{display:none;}
-.stab{flex-shrink:0;padding:5px 11px;border-radius:18px;font-size:10px;font-weight:700;border:1px solid var(--border);color:var(--muted);cursor:pointer;font-family:'Share Tech Mono';white-space:nowrap;display:flex;align-items:center;gap:4px;}
+.stab{flex-shrink:0;padding:5px 11px;border-radius:18px;font-size:10px;font-weight:700;border:1px solid var(--border);color:var(--muted);cursor:pointer;font-family:'Share Tech Mono';white-space:nowrap;}
 .stab.on{background:rgba(0,229,255,.1);border-color:var(--accent);color:var(--accent);}
-
-/* LEAGUE FILTER */
 .lgs{display:flex;overflow-x:auto;gap:5px;margin-bottom:10px;scrollbar-width:none;}
 .lgs::-webkit-scrollbar{display:none;}
-.lc{flex-shrink:0;padding:4px 10px;border-radius:18px;font-size:10px;font-weight:700;border:1px solid var(--border);color:var(--muted);cursor:pointer;font-family:'Share Tech Mono';display:flex;align-items:center;gap:3px;}
+.lc{flex-shrink:0;padding:4px 10px;border-radius:18px;font-size:10px;font-weight:700;border:1px solid var(--border);color:var(--muted);cursor:pointer;font-family:'Share Tech Mono';}
 .lc.on{background:rgba(0,229,255,.1);border-color:var(--accent);color:var(--accent);}
-.lc img{width:12px;height:8px;object-fit:contain;border-radius:1px;}
-
-/* SECTION TITLE */
-.sec-t{font-family:'Bebas Neue';font-size:12px;letter-spacing:2px;color:var(--muted);padding:6px 0 5px;display:flex;align-items:center;gap:6px;}
-.sec-t::after{content:'';flex:1;height:1px;background:var(--border);}
-
-/* HERO */
+.lg-hdr{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;margin-bottom:6px;cursor:pointer;transition:all .18s;}
+.lg-hdr:hover{background:rgba(0,229,255,.05);border-color:rgba(0,229,255,.2);}
+.lg-hdr.live-hdr{border-color:rgba(255,23,68,.3);background:rgba(255,23,68,.05);}
+.lg-logo{width:20px;height:20px;object-fit:contain;border-radius:3px;flex-shrink:0;}
+.lg-flag{width:16px;height:11px;object-fit:contain;border-radius:2px;flex-shrink:0;}
+.lg-info{flex:1;}
+.lg-name{font-family:'Bebas Neue';font-size:14px;letter-spacing:1px;color:var(--text);}
+.lg-country{font-size:9px;color:var(--muted);font-family:'Share Tech Mono';}
+.lg-count{font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;font-family:'Share Tech Mono';}
+.lg-count-live{background:rgba(255,23,68,.15);color:var(--red);border:1px solid rgba(255,23,68,.3);}
+.lg-count-norm{background:rgba(0,229,255,.08);color:var(--accent);border:1px solid rgba(0,229,255,.2);}
+.lg-arrow{font-size:10px;color:var(--muted);transition:transform .2s;}
+.lg-arrow.open{transform:rotate(180deg);}
+.lg-matches{display:none;margin-bottom:4px;}
+.lg-matches.open{display:block;}
+.lg-group{margin-bottom:8px;}
 .hero{background:linear-gradient(135deg,#0a1f3a,#06101e);border:1px solid var(--gold);border-radius:13px;padding:13px;margin-bottom:12px;}
 .hero-t{font-family:'Bebas Neue';font-size:18px;color:#fff;letter-spacing:2px;}
 .hero-s{font-size:11px;color:var(--muted);margin:4px 0 10px;}
@@ -59,16 +63,13 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;ma
 .pa{color:var(--accent);border-color:rgba(0,229,255,.3);background:rgba(0,229,255,.06);}
 .po{color:var(--orange);border-color:rgba(255,145,0,.3);background:rgba(255,145,0,.06);}
 .btn{padding:7px 13px;background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.25);border-radius:7px;color:var(--accent);font-family:'Share Tech Mono';font-size:10px;cursor:pointer;margin-right:6px;}
-
-/* MATCH CARD */
 .mc{background:var(--card);border:1px solid var(--border);border-radius:11px;margin-bottom:9px;overflow:hidden;position:relative;}
 .mc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;}
 .L::before{background:var(--red);}
 .U::before{background:var(--green);}
 .F::before{background:var(--muted);}
 .mc-h{display:flex;justify-content:space-between;align-items:center;padding:7px 12px 4px;}
-.mc-l{font-size:9px;color:var(--muted);font-family:'Share Tech Mono';display:flex;align-items:center;gap:4px;}
-.mc-l img{width:12px;height:12px;object-fit:contain;border-radius:2px;}
+.mc-l{font-size:9px;color:var(--muted);font-family:'Share Tech Mono';}
 .st{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;font-family:'Share Tech Mono';}
 .stL{background:rgba(255,23,68,.15);color:var(--red);border:1px solid rgba(255,23,68,.3);}
 .stU{background:rgba(0,230,118,.08);color:var(--green);border:1px solid rgba(0,230,118,.2);}
@@ -100,8 +101,6 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;ma
 .air{text-align:right;}
 .aic{font-family:'Bebas Neue';font-size:14px;color:var(--gold);}
 .aip{font-size:8px;color:var(--muted);font-family:'Share Tech Mono';}
-
-/* COUPON */
 .cbox{background:#141d2a;border:1px solid var(--border);border-radius:11px;padding:12px;margin-bottom:12px;}
 .ch{display:flex;justify-content:space-between;margin-bottom:8px;}
 .ct{font-family:'Bebas Neue';font-size:14px;letter-spacing:2px;color:var(--accent);}
@@ -119,38 +118,28 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;ma
 .bdl{flex:2;padding:10px;background:linear-gradient(90deg,var(--gold2),var(--gold));border:none;border-radius:7px;color:#06090f;font-family:'Bebas Neue';font-size:13px;letter-spacing:2px;cursor:pointer;}
 .bclr{flex:1;padding:10px;background:rgba(255,23,68,.08);border:1px solid rgba(255,23,68,.25);border-radius:7px;color:var(--red);font-family:'Bebas Neue';font-size:13px;cursor:pointer;}
 .emp{text-align:center;padding:16px;color:var(--muted);font-size:11px;font-family:'Share Tech Mono';line-height:1.7;}
-
-/* AI BOX */
 .aibox{background:linear-gradient(135deg,#0e1e35,#0a1525);border:1px solid var(--accent);border-radius:11px;padding:12px;margin-bottom:12px;}
 .ailbl{font-size:9px;letter-spacing:2px;color:var(--accent);font-family:'Share Tech Mono';margin-bottom:6px;}
 .airow{display:flex;gap:6px;}
 .aiinp{flex:1;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:7px;padding:9px 10px;color:var(--text);font-family:'Rajdhani';font-size:13px;outline:none;resize:none;height:40px;}
 .aiinp:focus{border-color:var(--accent);}
 .aiinp::placeholder{color:var(--muted);}
-.aigo{background:var(--accent);color:var(--bg);border:none;border-radius:7px;width:40px;height:40px;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;}
-.airsp{margin-top:9px;display:none;}
-.airsp.v{display:block;}
+.aigo{background:var(--accent);color:var(--bg);border:none;border-radius:7px;width:40px;height:40px;font-size:17px;cursor:pointer;font-weight:700;}
+.airsp{margin-top:9px;display:none;}.airsp.v{display:block;}
 .aith{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:11px;font-family:'Share Tech Mono';}
 .dots span{display:inline-block;width:4px;height:4px;background:var(--accent);border-radius:50%;animation:bo .8s infinite;margin:0 1px;}
 .dots span:nth-child(2){animation-delay:.15s}.dots span:nth-child(3){animation-delay:.3s}
 @keyframes bo{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-.aiout{font-size:12px;line-height:1.65;display:none;}
-.aiout.v{display:block;}
-
-/* CODE */
+.aiout{font-size:12px;line-height:1.65;display:none;}.aiout.v{display:block;}
 .code{background:linear-gradient(135deg,#0a1830,#050e1a);border:1px solid rgba(0,229,255,.3);border-radius:9px;padding:10px 12px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;}
 .cdl{font-size:8px;color:var(--muted);letter-spacing:2px;font-family:'Share Tech Mono';margin-bottom:2px;}
 .cdv{font-family:'Share Tech Mono';font-size:15px;font-weight:700;color:var(--accent);letter-spacing:3px;}
 .cdc{background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.28);border-radius:5px;padding:5px 9px;color:var(--accent);font-family:'Share Tech Mono';font-size:10px;cursor:pointer;}
 .cdc.ok{background:rgba(0,230,118,.1);border-color:rgba(0,230,118,.3);color:var(--green);}
-
-/* LOADING */
 .spin{display:inline-block;width:20px;height:20px;border:2px solid rgba(0,229,255,.15);border-top-color:var(--accent);border-radius:50%;animation:sp .7s linear infinite;margin-bottom:6px;}
 @keyframes sp{to{transform:rotate(360deg)}}
 .lcard{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:24px;text-align:center;margin-bottom:9px;}
 .ltxt{font-size:11px;color:var(--muted);font-family:'Share Tech Mono';line-height:1.7;}
-
-/* MODAL */
 .mo{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:500;display:none;align-items:flex-end;justify-content:center;}
 .mo.v{display:flex;}
 .mdl{background:#141d2a;border:1px solid var(--border);border-top:2px solid var(--gold);border-radius:14px 14px 0 0;width:100%;max-width:430px;padding:16px;max-height:88vh;overflow-y:auto;}
@@ -170,8 +159,6 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;ma
 .dlt{background:linear-gradient(90deg,var(--gold2),var(--gold));color:#06090f;border:none;}
 .dlh{background:rgba(0,150,255,.08);border:1px solid rgba(0,150,255,.25);color:#7ecfff;}
 .dlx{width:100%;padding:9px;background:transparent;border:1px solid var(--border);border-radius:7px;color:var(--muted);font-family:'Bebas Neue';font-size:12px;cursor:pointer;}
-
-/* NAV */
 .bnav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:#0b1017;border-top:1px solid var(--border);display:flex;padding:6px 0 14px;z-index:99;}
 .ni{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;}
 .ni-i{font-size:18px;}.ni-l{font-size:9px;font-weight:700;color:var(--muted);font-family:'Share Tech Mono';}
@@ -183,7 +170,6 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;ma
 </style>
 </head>
 <body>
-
 <div class="hdr">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
     <div style="display:flex;align-items:center;">
@@ -201,20 +187,10 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;ma
     <div class="tab" onclick="sw('ia',this)">🤖 IA</div>
   </div>
 </div>
-
-<!-- PAGE LIVE -->
 <div class="pg on" id="pg-live">
-
-  <!-- SEARCH BAR -->
-  <div class="srch-wrap">
-    <span class="srch-icon">🔍</span>
-    <input type="text" class="srch-inp" id="srchInp" placeholder="Rechercher un match, équipe, ligue...">
-    <button class="srch-clr" id="srchClr" onclick="clearSearch()">✕</button>
-  </div>
+  <div class="srch-wrap"><span class="srch-icon">🔍</span><input type="text" class="srch-inp" id="srchInp" placeholder="Rechercher un match, équipe, ligue..."><button class="srch-clr" id="srchClr" onclick="clearSearch()">✕</button></div>
   <div class="srch-count" id="srchCount"></div>
-
-  <!-- SPORT TABS -->
-  <div class="stabs" id="sportTabs">
+  <div class="stabs">
     <div class="stab on" data-sport="all" onclick="filterSport(this)">🌍 Tous</div>
     <div class="stab" data-sport="Soccer" onclick="filterSport(this)">⚽ Football</div>
     <div class="stab" data-sport="Basketball" onclick="filterSport(this)">🏀 Basket</div>
@@ -223,42 +199,20 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;ma
     <div class="stab" data-sport="Baseball" onclick="filterSport(this)">⚾ Baseball</div>
     <div class="stab" data-sport="Rugby" onclick="filterSport(this)">🏉 Rugby</div>
     <div class="stab" data-sport="Tennis" onclick="filterSport(this)">🎾 Tennis</div>
-    <div class="stab" data-sport="Handball" onclick="filterSport(this)">🤾 Handball</div>
-    <div class="stab" data-sport="Volleyball" onclick="filterSport(this)">🏐 Volley</div>
   </div>
-
-  <!-- LEAGUE FILTER -->
   <div class="lgs" id="lgF">
     <div class="lc on" data-id="all" onclick="flg(this)">🌍 Toutes</div>
-    <!-- Football Europe -->
-    <div class="lc" data-id="39" onclick="flg(this)"><img src="https://media.api-sports.io/football/leagues/39.png">PL</div>
-    <div class="lc" data-id="140" onclick="flg(this)"><img src="https://media.api-sports.io/football/leagues/140.png">La Liga</div>
-    <div class="lc" data-id="135" onclick="flg(this)"><img src="https://media.api-sports.io/football/leagues/135.png">Serie A</div>
-    <div class="lc" data-id="78" onclick="flg(this)"><img src="https://media.api-sports.io/football/leagues/78.png">Bundesliga</div>
-    <div class="lc" data-id="61" onclick="flg(this)"><img src="https://media.api-sports.io/football/leagues/61.png">Ligue 1</div>
-    <div class="lc" data-id="2" onclick="flg(this)"><img src="https://media.api-sports.io/football/leagues/2.png">UCL</div>
-    <div class="lc" data-id="3" onclick="flg(this)"><img src="https://media.api-sports.io/football/leagues/3.png">Europa</div>
-    <div class="lc" data-id="848" onclick="flg(this)">Conference</div>
-    <div class="lc" data-id="88" onclick="flg(this)">Eredivisie</div>
-    <div class="lc" data-id="94" onclick="flg(this)">Portugal</div>
-    <div class="lc" data-id="144" onclick="flg(this)">Belgique</div>
-    <div class="lc" data-id="207" onclick="flg(this)">Suisse</div>
-    <div class="lc" data-id="106" onclick="flg(this)">Russie</div>
-    <div class="lc" data-id="179" onclick="flg(this)">Écosse</div>
-    <!-- Football Afrique -->
+    <div class="lc" data-id="39" onclick="flg(this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 PL</div>
+    <div class="lc" data-id="140" onclick="flg(this)">🇪🇸 La Liga</div>
+    <div class="lc" data-id="135" onclick="flg(this)">🇮🇹 Serie A</div>
+    <div class="lc" data-id="78" onclick="flg(this)">🇩🇪 Bundesliga</div>
+    <div class="lc" data-id="61" onclick="flg(this)">🇫🇷 Ligue 1</div>
+    <div class="lc" data-id="2" onclick="flg(this)">🏆 UCL</div>
+    <div class="lc" data-id="3" onclick="flg(this)">🥈 Europa</div>
+    <div class="lc" data-id="253" onclick="flg(this)">🇺🇸 MLS</div>
+    <div class="lc" data-id="71" onclick="flg(this)">🇧🇷 Brésil</div>
     <div class="lc" data-id="12" onclick="flg(this)">🌍 AFCON</div>
-    <div class="lc" data-id="29" onclick="flg(this)">CAF CL</div>
-    <!-- Football Amériques -->
-    <div class="lc" data-id="253" onclick="flg(this)">MLS</div>
-    <div class="lc" data-id="71" onclick="flg(this)">Brésil</div>
-    <div class="lc" data-id="13" onclick="flg(this)">Copa Lib.</div>
-    <!-- Basketball -->
-    <div class="lc" data-id="nba" onclick="flg(this)">🏀 NBA</div>
-    <!-- Hockey -->
-    <div class="lc" data-id="nhl" onclick="flg(this)">🏒 NHL</div>
   </div>
-
-  <!-- STATUS HERO -->
   <div class="hero">
     <div style="font-size:9px;color:var(--gold2);letter-spacing:2px;font-family:'Share Tech Mono';margin-bottom:3px;">◈ API-FOOTBALL OFFICIELLE v3</div>
     <div class="hero-t">MATCHS DU JOUR</div>
@@ -272,17 +226,13 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;ma
     <button class="btn" onclick="load()">🔄 ACTUALISER</button>
     <button class="btn" onclick="loadLive()">⚡ LIVE</button>
   </div>
-
   <div id="mCont"><div class="lcard"><div class="spin"></div><div class="ltxt">Connexion à l'API officielle...</div></div></div>
-  <div style="text-align:center;font-size:9px;color:var(--muted);padding:8px;opacity:.5;font-family:'Share Tech Mono'">Données officielles API-Football v3</div>
   <div class="sp"></div>
 </div>
-
-<!-- PAGE COUPON -->
 <div class="pg" id="pg-coupon">
   <div class="cbox">
     <div class="ch"><div class="ct">🎫 MON COUPON 1XBET</div><div class="cc" id="cCnt">0 sélection</div></div>
-    <div id="cItems"><div class="emp">Aucune sélection.<br>Tapez une cote dans l'onglet Live.</div></div>
+    <div id="cItems"><div class="emp">Aucune sélection.<br>Choisissez un coupon ci-dessous ou ajoutez des cotes depuis Live.</div></div>
     <div id="cTW" style="display:none">
       <div class="ctot">
         <div><div class="ctl">COTE COMBINÉE</div><div class="ctv" id="cTot">1.00</div></div>
@@ -290,17 +240,35 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;ma
       </div>
     </div>
     <div class="cbtns" id="cBtns" style="display:none">
-      <button class="bdl" onclick="openMo()">⬇ CODE + TÉLÉCHARGER</button>
+      <button class="bdl" onclick="openMo()">⬇ TÉLÉCHARGER</button>
       <button class="bclr" onclick="clrC()">✕</button>
     </div>
   </div>
+  <div style="background:linear-gradient(135deg,#0a1525,#060f1a);border:1px solid rgba(0,229,255,.2);border-radius:12px;padding:12px;margin-bottom:12px;">
+    <div style="font-family:'Bebas Neue';font-size:14px;letter-spacing:2px;color:var(--accent);margin-bottom:8px;">📱 COMMENT PARIER SUR 1XBET</div>
+    <div style="display:flex;flex-direction:column;gap:7px;">
+      <div style="display:flex;align-items:center;gap:8px;"><div style="width:22px;height:22px;border-radius:50%;background:rgba(0,229,255,.15);border:1px solid rgba(0,229,255,.3);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:12px;color:var(--accent);flex-shrink:0;">1</div><div style="font-size:11px;">Choisissez un coupon haute cote ci-dessous</div></div>
+      <div style="display:flex;align-items:center;gap:8px;"><div style="width:22px;height:22px;border-radius:50%;background:rgba(0,229,255,.15);border:1px solid rgba(0,229,255,.3);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:12px;color:var(--accent);flex-shrink:0;">2</div><div style="font-size:11px;">Appuyez <b style="color:var(--gold)">⬇ TÉLÉCHARGER</b> → sauvegardez votre liste</div></div>
+      <div style="display:flex;align-items:center;gap:8px;"><div style="width:22px;height:22px;border-radius:50%;background:rgba(0,229,255,.15);border:1px solid rgba(0,229,255,.3);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:12px;color:var(--accent);flex-shrink:0;">3</div><div style="font-size:11px;">Ouvrez <b style="color:var(--gold)">1XBET</b> → cherchez chaque match</div></div>
+      <div style="display:flex;align-items:center;gap:8px;"><div style="width:22px;height:22px;border-radius:50%;background:rgba(0,229,255,.15);border:1px solid rgba(0,229,255,.3);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:12px;color:var(--accent);flex-shrink:0;">4</div><div style="font-size:11px;">Ajoutez les mêmes cotes → <b style="color:var(--green)">Validez et misez !</b></div></div>
+    </div>
+    <button onclick="open1xbet()" style="width:100%;margin-top:10px;padding:10px;background:linear-gradient(90deg,#c8a000,#ffd600);border:none;border-radius:8px;color:#000;font-family:'Bebas Neue';font-size:13px;letter-spacing:2px;cursor:pointer;">🎰 OUVRIR 1XBET MAINTENANT</button>
+  </div>
+  <div style="font-family:'Bebas Neue';font-size:15px;letter-spacing:2px;color:var(--gold);margin-bottom:4px;display:flex;align-items:center;gap:8px;">💰 COUPONS HAUTE COTE<div style="flex:1;height:1px;background:var(--border)"></div></div>
+  <div style="font-size:10px;color:var(--muted);font-family:'Share Tech Mono';margin-bottom:10px;">Sélections IA • À reproduire manuellement sur 1XBET</div>
+  <div style="display:flex;gap:6px;margin-bottom:10px;overflow-x:auto;scrollbar-width:none;">
+    <button onclick="filterHC(10,this)" id="hcbtn10" style="flex-shrink:0;padding:5px 11px;border-radius:18px;font-size:10px;font-weight:700;border:1px solid rgba(255,214,0,.4);background:rgba(255,214,0,.1);color:var(--gold);font-family:'Share Tech Mono';cursor:pointer;">Cote 10+</button>
+    <button onclick="filterHC(20,this)" id="hcbtn20" style="flex-shrink:0;padding:5px 11px;border-radius:18px;font-size:10px;font-weight:700;border:1px solid var(--border);color:var(--muted);font-family:'Share Tech Mono';cursor:pointer;">Cote 20+</button>
+    <button onclick="filterHC(50,this)" id="hcbtn50" style="flex-shrink:0;padding:5px 11px;border-radius:18px;font-size:10px;font-weight:700;border:1px solid var(--border);color:var(--muted);font-family:'Share Tech Mono';cursor:pointer;">Cote 50+</button>
+    <button onclick="filterHC(100,this)" id="hcbtn100" style="flex-shrink:0;padding:5px 11px;border-radius:18px;font-size:10px;font-weight:700;border:1px solid var(--border);color:var(--muted);font-family:'Share Tech Mono';cursor:pointer;">Cote 100+</button>
+    <button onclick="filterHC(500,this)" id="hcbtn500" style="flex-shrink:0;padding:5px 11px;border-radius:18px;font-size:10px;font-weight:700;border:1px solid rgba(255,23,68,.4);color:var(--red);font-family:'Share Tech Mono';cursor:pointer;">🔥 500+</button>
+  </div>
+  <div id="hcList"><div class="emp">Chargez les matchs pour générer les coupons.</div></div>
   <div class="sp"></div>
 </div>
-
-<!-- PAGE IA -->
 <div class="pg" id="pg-ia">
   <div class="aibox">
-    <div class="ailbl">◈ IA ANALYSE — MATCHS RÉELS API-FOOTBALL</div>
+    <div class="ailbl">◈ IA ANALYSE — MATCHS RÉELS</div>
     <div class="airow">
       <textarea class="aiinp" id="aiInp" placeholder="Ex: Analyse Real Madrid vs Barcelona..." rows="1"></textarea>
       <button class="aigo" onclick="askAI()">→</button>
@@ -314,44 +282,35 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;ma
   <div id="iaL"></div>
   <div class="sp"></div>
 </div>
-
-<!-- NAV -->
 <div class="bnav">
   <div class="ni on" onclick="sw('live',null,this)"><div class="ni-i">⚽</div><div class="ni-l">LIVE</div></div>
   <div class="ni" onclick="sw('coupon',null,this)"><div class="ni-i">🎫</div><div class="ni-l">COUPON</div></div>
   <div class="ni" onclick="sw('ia',null,this)"><div class="ni-i">🤖</div><div class="ni-l">IA</div></div>
 </div>
-
-<!-- MODAL COUPON -->
 <div class="mo" id="mo" onclick="if(event.target===this)closeMo()">
   <div class="mdl">
     <div class="mh"></div>
-    <div class="mt">🎫 COUPON 1XBET</div>
+    <div class="mt">🎫 MES SÉLECTIONS 1XBET</div>
     <div class="ms" id="moS">—</div>
-    <div class="code"><div><div class="cdl">◈ CODE COUPON</div><div class="cdv" id="moC">—</div></div><button class="cdc" onclick="cpC()" id="cpB">📋 COPIER</button></div>
     <div id="moRows"></div>
-    <div class="dlg"><button class="dlb dlt" onclick="dlTXT()">📄 .TXT</button><button class="dlb dlh" onclick="dlHTML()">🌐 HTML</button></div>
+    <div style="background:rgba(255,214,0,.06);border:1px solid rgba(255,214,0,.2);border-radius:9px;padding:10px;margin-bottom:10px;">
+      <div style="font-family:'Bebas Neue';font-size:12px;letter-spacing:2px;color:var(--gold);margin-bottom:6px;">📱 SAISIR SUR 1XBET</div>
+      <div style="font-size:10px;color:var(--text);line-height:1.9;">1️⃣ Ouvrez <b>1XBET</b> sur votre téléphone<br>2️⃣ Allez dans <b>Sports → Football</b><br>3️⃣ Cherchez chaque match listé<br>4️⃣ Appuyez sur la même cote (1, X ou 2)<br>5️⃣ Validez le combiné → Misez !</div>
+      <button onclick="open1xbet()" style="width:100%;margin-top:8px;padding:9px;background:linear-gradient(90deg,#c8a000,#ffd600);border:none;border-radius:7px;color:#000;font-family:'Bebas Neue';font-size:12px;letter-spacing:1px;cursor:pointer;">🎰 OUVRIR 1XBET</button>
+    </div>
+    <div class="dlg">
+      <button class="dlb dlt" onclick="dlTXT()">📄 SAUVEGARDER .TXT</button>
+      <button class="dlb dlh" onclick="dlHTML()">🌐 SAUVEGARDER HTML</button>
+    </div>
     <button class="dlx" onclick="closeMo()">✕ FERMER</button>
-  </div>
-</div>
-<div class="toast" id="toast"></div>
-
-<script>
-// ═══════════════════════════════
-// CONFIG & STATE
-// ═══════════════════════════════
+  </div><script>
 const NOW=new Date();
 const DAYS=['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
 const MTHS=['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
 document.getElementById('hDate').textContent=`${DAYS[NOW.getDay()]} ${NOW.getDate()} ${MTHS[NOW.getMonth()]}`;
-
 function tstr(){const d=new Date();return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
+let FX=[],CPN=[],LGF='all',SPORT='all',SRCH='',MDL=null,HC_MIN=10;
 
-let FX=[],CPN=[],LGF='all',SPORT='all',SRCH='',MDL=null;
-
-// ═══════════════════════════════
-// API CALLS
-// ═══════════════════════════════
 async function api(p){const r=await fetch(p);if(!r.ok)throw new Error('HTTP '+r.status);return r.json();}
 
 async function load(){
@@ -362,7 +321,7 @@ async function load(){
     FX=(d.response||[]).map(f=>({...f,_o:odds(f),_p:null}));
     FX.forEach(f=>f._p=pred(f));
     setBadge(`✅ ${FX.length} MATCHS RÉELS`,'g');
-    stats();render();iaL();
+    stats();render();iaL();setTimeout(renderHC,500);
   }catch(e){
     setBadge('❌ ERREUR API','r');
     document.getElementById('mCont').innerHTML=`<div class="lcard"><div class="ltxt">Erreur: ${e.message}<br><br><button onclick="load()" style="padding:6px 12px;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.3);border-radius:6px;color:var(--accent);font-family:'Share Tech Mono';font-size:10px;cursor:pointer;">🔄 RÉESSAYER</button></div></div>`;
@@ -375,14 +334,10 @@ async function loadLive(){
     const lv=(d.response||[]).map(f=>({...f,_o:odds(f),_p:null}));
     lv.forEach(f=>f._p=pred(f));
     lv.forEach(lf=>{const i=FX.findIndex(x=>x.fixture?.id===lf.fixture?.id);if(i>=0)FX[i]=lf;else FX.unshift(lf);});
-    stats();render();
-    toast(`⚡ ${lv.length} match(s) live`);
+    stats();render();toast(`⚡ ${lv.length} live`);
   }catch(e){toast('❌ '+e.message);}
 }
 
-// ═══════════════════════════════
-// ODDS & PREDICTIONS
-// ═══════════════════════════════
 function odds(f){
   const id=f.fixture?.id||0,r=n=>Math.abs(Math.sin(id*n+n*13.7)*10000)%1;
   const hP=.36+r(1)*.2,dP=.21+r(2)*.11,aP=Math.max(.08,1-hP-dP),vig=.92,o=p=>Math.round((1/(p*vig))*100)/100;
@@ -392,18 +347,13 @@ function odds(f){
     hC:Math.round(hP*100),dC:Math.round(dP*100),aC:Math.round(aP*100)};
 }
 
-function pred(f){
-  const o=f._o,h=f.teams?.home?.name||'Dom',a=f.teams?.away?.name||'Ext';
+function pred(f){const o=f._o,h=f.teams?.home?.name||'Dom',a=f.teams?.away?.name||'Ext';
   if(o.h<=o.a&&o.h<2.3)return{t:h+' Gagne',c:o.h,cf:o.hC};
   if(o.a<o.h&&o.a<2.3)return{t:a+' Gagne',c:o.a,cf:o.aC};
   if(o.bty<1.75)return{t:'Les deux marquent',c:o.bty,cf:62};
   if(o.o25<1.82)return{t:'Plus de 2.5 buts',c:o.o25,cf:60};
-  return{t:'Match Nul',c:o.d,cf:o.dC};
-}
+  return{t:'Match Nul',c:o.d,cf:o.dC};}
 
-// ═══════════════════════════════
-// STATS UPDATE
-// ═══════════════════════════════
 function stats(){
   const lv=FX.filter(f=>['1H','2H','HT','ET','P'].includes(f.fixture?.status?.short)).length;
   const up=FX.filter(f=>['NS','TBD'].includes(f.fixture?.status?.short)).length;
@@ -412,136 +362,61 @@ function stats(){
   document.getElementById('pU').textContent=`⏳ ${up} À VENIR`;
   document.getElementById('pF').textContent=`✅ ${ft} TERMINÉS`;
   document.getElementById('pT').textContent=`📊 ${FX.length} TOTAL`;
-  document.getElementById('hSub').textContent=`${FX.length} matchs réels • API-Football officielle`;
+  document.getElementById('hSub').textContent=`${FX.length} matchs réels • API-Football`;
 }
 
-// ═══════════════════════════════
-// SEARCH
-// ═══════════════════════════════
-document.getElementById('srchInp').addEventListener('input', function(){
-  SRCH = this.value.trim().toLowerCase();
-  const clr = document.getElementById('srchClr');
-  clr.classList.toggle('vis', SRCH.length > 0);
+document.getElementById('srchInp').addEventListener('input',function(){
+  SRCH=this.value.trim().toLowerCase();
+  document.getElementById('srchClr').classList.toggle('vis',SRCH.length>0);
   render();
 });
+function clearSearch(){SRCH='';document.getElementById('srchInp').value='';document.getElementById('srchClr').classList.remove('vis');document.getElementById('srchCount').textContent='';render();}
 
-function clearSearch(){
-  SRCH='';
-  document.getElementById('srchInp').value='';
-  document.getElementById('srchClr').classList.remove('vis');
-  document.getElementById('srchCount').textContent='';
-  render();
-}
-
-// ═══════════════════════════════
-// FILTER: SPORT + LEAGUE + SEARCH
-// ═══════════════════════════════
-function filterSport(el){
-  document.querySelectorAll('.stab').forEach(t=>t.classList.remove('on'));
-  el.classList.add('on');
-  SPORT=el.dataset.sport;
-  LGF='all';
-  document.querySelectorAll('.lc').forEach(c=>c.classList.remove('on'));
-  document.querySelector('.lc[data-id="all"]').classList.add('on');
-  render();
-}
-
-function flg(el){
-  document.querySelectorAll('.lc').forEach(c=>c.classList.remove('on'));
-  el.classList.add('on');
-  LGF=el.dataset.id;
-  render();
-}
+function filterSport(el){document.querySelectorAll('.stab').forEach(t=>t.classList.remove('on'));el.classList.add('on');SPORT=el.dataset.sport;LGF='all';document.querySelectorAll('.lc').forEach(c=>c.classList.remove('on'));document.querySelector('.lc[data-id="all"]').classList.add('on');render();}
+function flg(el){document.querySelectorAll('.lc').forEach(c=>c.classList.remove('on'));el.classList.add('on');LGF=el.dataset.id;render();}
 
 function getFiltered(){
   let d=[...FX];
-  // Sport filter
-  if(SPORT!=='all') d=d.filter(f=>f.sport===SPORT||f.league?.name?.toLowerCase().includes(SPORT.toLowerCase())||getSport(f)===SPORT);
-  // League filter
-  if(LGF!=='all') d=d.filter(f=>String(f.league?.id)===LGF);
-  // Search filter
-  if(SRCH){
-    d=d.filter(f=>{
-      const ht=(f.teams?.home?.name||'').toLowerCase();
-      const at=(f.teams?.away?.name||'').toLowerCase();
-      const lg=(f.league?.name||'').toLowerCase();
-      const ct=(f.league?.country||'').toLowerCase();
-      return ht.includes(SRCH)||at.includes(SRCH)||lg.includes(SRCH)||ct.includes(SRCH);
-    });
-  }
+  if(SPORT!=='all')d=d.filter(f=>getSport(f)===SPORT);
+  if(LGF!=='all')d=d.filter(f=>String(f.league?.id)===LGF);
+  if(SRCH){d=d.filter(f=>{const ht=(f.teams?.home?.name||'').toLowerCase(),at=(f.teams?.away?.name||'').toLowerCase(),lg=(f.league?.name||'').toLowerCase(),ct=(f.league?.country||'').toLowerCase();return ht.includes(SRCH)||at.includes(SRCH)||lg.includes(SRCH)||ct.includes(SRCH);});}
   return d;
 }
+function getSport(f){const lg=f.league?.name||'';if(['NBA','NBL'].some(x=>lg.includes(x)))return 'Basketball';if(['NHL','KHL'].some(x=>lg.includes(x)))return 'Ice Hockey';if(['NFL','CFL'].some(x=>lg.includes(x)))return 'American Football';if(['MLB','NPB'].some(x=>lg.includes(x)))return 'Baseball';if(['ATP','WTA'].some(x=>lg.includes(x)))return 'Tennis';if(['Rugby'].some(x=>lg.includes(x)))return 'Rugby';if(['Handball'].some(x=>lg.includes(x)))return 'Handball';return 'Soccer';}
 
-function getSport(f){
-  const lg=f.league?.name||'';
-  if(['NBA','NBL','EuroLeague','NCAA'].some(x=>lg.includes(x))) return 'Basketball';
-  if(['NHL','KHL','SHL'].some(x=>lg.includes(x))) return 'Ice Hockey';
-  if(['NFL','CFL','NCAA Football'].some(x=>lg.includes(x))) return 'American Football';
-  if(['MLB','NPB','KBO'].some(x=>lg.includes(x))) return 'Baseball';
-  if(['ATP','WTA','Roland','Wimbledon','US Open'].some(x=>lg.includes(x))) return 'Tennis';
-  if(['Rugby','Top 14','Six Nations'].some(x=>lg.includes(x))) return 'Rugby';
-  if(['Handball','EHF'].some(x=>lg.includes(x))) return 'Handball';
-  if(['Volleyball','VNL'].some(x=>lg.includes(x))) return 'Volleyball';
-  return 'Soccer';
-}
-
-// ═══════════════════════════════
-// RENDER MATCHES (grouped by league)
-// ═══════════════════════════════
 function stC(s){return['1H','2H','HT','ET','P'].includes(s)?'L':['FT','AET','PEN'].includes(s)?'F':'U';}
-
-function stH(f){
-  const s=f.fixture?.status?.short,el=f.fixture?.status?.elapsed;
+function stH(f){const s=f.fixture?.status?.short,el=f.fixture?.status?.elapsed;
   if(['1H','2H'].includes(s))return`<div class="st stL">⚡ ${el}'</div>`;
   if(s==='HT')return`<div class="st" style="background:rgba(255,145,0,.1);color:var(--orange);border:1px solid rgba(255,145,0,.25)">⏸ HT</div>`;
   if(['FT','AET','PEN'].includes(s))return`<div class="st stF">✅ FT</div>`;
-  if(['ET','P'].includes(s))return`<div class="st stL">⚡ PROL.</div>`;
   const t=f.fixture?.date?new Date(f.fixture.date).toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}):'--:--';
-  return`<div class="st stU">⏳ ${t}</div>`;
-}
+  return`<div class="st stU">⏳ ${t}</div>`;}
 
 function render(){
-  const data = getFiltered();
-
-  // Update search count
-  if(SRCH){
-    document.getElementById('srchCount').textContent = `${data.length} résultat${data.length>1?'s':''} pour "${SRCH}"`;
-  } else {
-    document.getElementById('srchCount').textContent = '';
-  }
-
-  if(!data.length){
-    document.getElementById('mCont').innerHTML=`<div class="no-res">🔍 Aucun match trouvé${SRCH?' pour "'+SRCH+'"':''}<br><br><button onclick="clearSearch()" style="padding:6px 12px;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.3);border-radius:6px;color:var(--accent);font-family:'Share Tech Mono';font-size:10px;cursor:pointer;">Effacer la recherche</button></div>`;
-    return;
-  }
-
-  // Sort: live → upcoming → finished
+  const data=getFiltered();
+  if(SRCH)document.getElementById('srchCount').textContent=`${data.length} résultat${data.length>1?'s':''} pour "${SRCH}"`;
+  else document.getElementById('srchCount').textContent='';
+  if(!data.length){document.getElementById('mCont').innerHTML=`<div class="no-res">🔍 Aucun match trouvé<br><br><button onclick="clearSearch()" style="padding:6px 12px;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.3);border-radius:6px;color:var(--accent);font-family:'Share Tech Mono';font-size:10px;cursor:pointer;">Effacer</button></div>`;return;}
   const ord=s=>['1H','2H','HT','ET','P'].includes(s)?0:['NS','TBD'].includes(s)?1:2;
   data.sort((a,b)=>ord(a.fixture?.status?.short)-ord(b.fixture?.status?.short));
-
-  // Group by league
   const groups={};
-  data.forEach(f=>{
-    const key=`${f.league?.id||0}`;
-    if(!groups[key]) groups[key]={name:f.league?.name||'',country:f.league?.country||'',logo:f.league?.logo||'',flag:f.league?.flag||'',matches:[]};
-    groups[key].matches.push(f);
-  });
-
+  data.forEach(f=>{const key=`${f.league?.id||0}`;if(!groups[key])groups[key]={name:f.league?.name||'',country:f.league?.country||'',logo:f.league?.logo||'',flag:f.league?.flag||'',matches:[],liveCount:0};groups[key].matches.push(f);if(['1H','2H','HT','ET','P'].includes(f.fixture?.status?.short))groups[key].liveCount++;});
+  const sorted=Object.entries(groups).sort(([,a],[,b])=>b.liveCount-a.liveCount||b.matches.length-a.matches.length);
   let html='';
-  Object.values(groups).forEach(g=>{
-    const flagImg=g.flag?`<img src="${g.flag}" style="width:12px;height:8px;object-fit:contain;border-radius:1px;">`:'';
-    const lgImg=g.logo?`<img src="${g.logo}" style="width:14px;height:14px;object-fit:contain;border-radius:2px;">`:'';
-    html+=`<div class="sec-t">${lgImg} ${flagImg} ${g.name} <span style="color:var(--muted);font-size:9px">${g.country}</span></div>`;
-    g.matches.forEach(f=>{ html+=card(f); });
+  sorted.forEach(([lgId,g],idx)=>{
+    const isLive=g.liveCount>0;
+    const flagImg=g.flag?`<img class="lg-flag" src="${g.flag}" onerror="this.style.display='none'">`:'🌍';
+    const lgImg=g.logo?`<img class="lg-logo" src="${g.logo}" onerror="this.style.display='none'">`:'';
+    const countBadge=isLive?`<span class="lg-count lg-count-live">⚡ ${g.liveCount} LIVE</span>`:`<span class="lg-count lg-count-norm">${g.matches.length} match${g.matches.length>1?'s':''}</span>`;
+    const autoOpen=isLive||idx<3;
+    html+=`<div class="lg-group"><div class="lg-hdr ${isLive?'live-hdr':''}" onclick="toggleLg('lg-${lgId}',this)">${lgImg}${flagImg}<div class="lg-info"><div class="lg-name">${g.name}</div><div class="lg-country">${g.country}</div></div>${countBadge}<div class="lg-arrow ${autoOpen?'open':''}">▼</div></div><div class="lg-matches ${autoOpen?'open':''}" id="lg-${lgId}">${g.matches.map(f=>card(f)).join('')}</div></div>`;
   });
-
   document.getElementById('mCont').innerHTML=html;
 }
 
 function card(f){
   const id=f.fixture?.id,ht=f.teams?.home?.name||'?',at=f.teams?.away?.name||'?';
-  const hL=f.teams?.home?.logo,aL=f.teams?.away?.logo;
-  const hs=f.goals?.home,as_=f.goals?.away,o=f._o,p=f._p,s=f.fixture?.status?.short;
+  const hL=f.teams?.home?.logo,aL=f.teams?.away?.logo,hs=f.goals?.home,as_=f.goals?.away,o=f._o,p=f._p,s=f.fixture?.status?.short;
   const isL=['1H','2H','HT','ET','P'].includes(s);
   const hI=hL?`<img class="tl" src="${hL}" onerror="this.style.display='none'">`:`<div class="tl" style="font-size:14px;text-align:center;line-height:26px">⚽</div>`;
   const aI=aL?`<img class="tl" src="${aL}" onerror="this.style.display='none'">`:`<div class="tl" style="font-size:14px;text-align:center;line-height:26px">⚽</div>`;
@@ -563,32 +438,24 @@ function card(f){
       <div class="o2">
         <div class="ob2" id="oo${id}" onclick="addC(${id},'+2.5 buts',${o.o25},this)"><div class="o2n">⬆ Plus 2.5</div><div class="o2v">${o.o25}</div></div>
         <div class="ob2" id="ou${id}" onclick="addC(${id},'-2.5 buts',${o.u25},this)"><div class="o2n">⬇ Moins 2.5</div><div class="o2v">${o.u25}</div></div>
-        <div class="ob2" id="oby${id}" onclick="addC(${id},'BTTS Oui',${o.bty},this)"><div class="o2n">⚽⚽ BTTS Oui</div><div class="o2v">${o.bty}</div></div>
-        <div class="ob2" id="obn${id}" onclick="addC(${id},'BTTS Non',${o.btn},this)"><div class="o2n">🚫 BTTS Non</div><div class="o2v">${o.btn}</div></div>
+        <div class="ob2" id="oby${id}" onclick="addC(${id},'BTTS Oui',${o.bty},this)"><div class="o2n">⚽⚽ BTTS</div><div class="o2v">${o.bty}</div></div>
+        <div class="ob2" id="obn${id}" onclick="addC(${id},'BTTS Non',${o.btn},this)"><div class="o2n">🚫 Non</div><div class="o2v">${o.btn}</div></div>
       </div>
       <div class="ais"><div><div class="ait">🤖 ${p.t}</div><div class="aib"><div class="aif" style="width:${p.cf}%"></div></div></div><div class="air"><div class="aic">${p.c}</div><div class="aip">${p.cf}% CONF.</div></div></div>
     </div>
-  </div>`;
-}
-
-// ═══════════════════════════════
-// COUPON
-// ═══════════════════════════════
-function addC(fid,pred,cote,btn){
+  </div>`;}function addC(fid,pred,cote,btn){
   const f=FX.find(x=>x.fixture?.id===fid);if(!f)return;
   const match=`${f.teams?.home?.name} vs ${f.teams?.away?.name}`;
   const idx=CPN.findIndex(s=>s.fid===fid);
-  if(idx>=0){
-    if(CPN[idx].pred===pred){CPN.splice(idx,1);btn.classList.remove('on');toast('Retiré');}
-    else{CPN[idx]={fid,match,pred,cote};document.querySelectorAll(`[id$="${fid}"]`).forEach(b=>b.classList.remove('on'));btn.classList.add('on');toast('Modifié ✅');}
-  }else{CPN.push({fid,match,pred,cote});btn.classList.add('on');toast('✅ Ajouté!');}
+  if(idx>=0){if(CPN[idx].pred===pred){CPN.splice(idx,1);btn.classList.remove('on');toast('Retiré');}
+  else{CPN[idx]={fid,match,pred,cote};document.querySelectorAll(`[id$="${fid}"]`).forEach(b=>b.classList.remove('on'));btn.classList.add('on');toast('Modifié ✅');}}
+  else{CPN.push({fid,match,pred,cote});btn.classList.add('on');toast('✅ Ajouté!');}
   renderC();
 }
-
 function renderC(){
   const n=CPN.length;
   document.getElementById('cCnt').textContent=`${n} sélection${n>1?'s':''}`;
-  if(!n){document.getElementById('cItems').innerHTML='<div class="emp">Aucune sélection.</div>';document.getElementById('cTW').style.display='none';document.getElementById('cBtns').style.display='none';return;}
+  if(!n){document.getElementById('cItems').innerHTML='<div class="emp">Aucune sélection.<br>Choisissez un coupon ci-dessous.</div>';document.getElementById('cTW').style.display='none';document.getElementById('cBtns').style.display='none';return;}
   document.getElementById('cItems').innerHTML=CPN.map((s,i)=>`<div class="ci"><div class="cii"><div class="cm">${s.match.substring(0,26)}</div><div class="cp">${s.pred}</div></div><div class="cv">${s.cote}</div><div class="cd" onclick="delC(${i})">✕</div></div>`).join('');
   const tot=Math.round(CPN.reduce((a,s)=>a*parseFloat(s.cote),1)*100)/100;
   document.getElementById('cTot').textContent=tot;
@@ -596,13 +463,9 @@ function renderC(){
   document.getElementById('cTW').style.display='block';
   document.getElementById('cBtns').style.display='flex';
 }
-
 function delC(i){CPN.splice(i,1);renderC();}
 function clrC(){CPN=[];renderC();document.querySelectorAll('.ob.on,.ob2.on').forEach(b=>b.classList.remove('on'));}
 
-// ═══════════════════════════════
-// COUPON CODE & MODAL
-// ═══════════════════════════════
 const CH='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 function genCode(s){let h=s.reduce((a,x)=>(a*31+(parseFloat(x.cote)*100|0))&0x7fffffff,Date.now()&0xffff),p1='',p2='',p3=Date.now().toString(36).toUpperCase().slice(-4);for(let i=0;i<4;i++){p1+=CH[h%CH.length];h=Math.floor(h/CH.length)+17;}for(let i=0;i<4;i++){p2+=CH[h%CH.length];h=Math.floor(h/CH.length)+31;}return`BGT-${p1}-${p2}-${p3}`;}
 
@@ -610,107 +473,125 @@ function openMo(){
   if(!CPN.length)return;
   const tot=Math.round(CPN.reduce((a,s)=>a*parseFloat(s.cote),1)*100)/100;
   MDL={s:CPN,t:tot,c:genCode(CPN),d:new Date().toLocaleDateString('fr-FR')};
-  document.getElementById('moS').textContent=`${CPN.length} sélections • Cote ${tot}`;
-  document.getElementById('moC').textContent=MDL.c;
-  document.getElementById('moRows').innerHTML=`
-    <div class="mrows">${CPN.map(s=>`<div class="mrow"><div><div class="mrm">${s.match.substring(0,26)}</div><div class="mrp">▶ ${s.pred}</div></div><div class="mrc">${s.cote}</div></div>`).join('')}</div>
-    <div class="mtot"><div><div style="font-size:9px;color:var(--muted);font-family:'Share Tech Mono'">COTE TOTALE</div><div class="mtc">${tot}</div></div><div style="text-align:right"><div style="font-size:10px;color:var(--muted)">Gain 10k FCFA</div><div class="mtg">≈ ${(10000*tot).toLocaleString('fr-FR')} FCFA</div></div></div>`;
+  document.getElementById('moS').textContent=`${CPN.length} sélections • Cote totale: ${tot}`;
+  document.getElementById('moRows').innerHTML=`<div class="mrows">${CPN.map(s=>`<div class="mrow"><div><div class="mrm">${s.match.substring(0,26)}</div><div class="mrp">▶ ${s.pred}</div></div><div class="mrc">${s.cote}</div></div>`).join('')}</div><div class="mtot"><div><div style="font-size:9px;color:var(--muted);font-family:'Share Tech Mono'">COTE TOTALE</div><div class="mtc">${tot}</div></div><div style="text-align:right"><div style="font-size:10px;color:var(--muted)">Gain 10k FCFA</div><div class="mtg">≈ ${(10000*tot).toLocaleString('fr-FR')} FCFA</div></div></div>`;
   document.getElementById('mo').classList.add('v');
 }
-
 function closeMo(){document.getElementById('mo').classList.remove('v');}
-
-function cpC(){
-  const c=MDL?.c;if(!c)return;
-  navigator.clipboard.writeText(c).then(()=>{
-    const b=document.getElementById('cpB');
-    b.textContent='✅ COPIÉ!';b.classList.add('ok');
-    setTimeout(()=>{b.textContent='📋 COPIER';b.classList.remove('ok');},2000);
-    toast('✅ '+c);
-  });
-}
 
 function dlTXT(){
   const c=MDL;if(!c)return;
-  const t=['══════════════════════════════','  BETGENIUS AI — COUPON 1XBET',`  Code: ${c.c}  Cote: ${c.t}`,'══════════════════════════════',...c.s.map((s,i)=>`  ${i+1}. ${s.match}\n     ▶ ${s.pred}  Cote: ${s.cote}`),'══════════════════════════════',`  Gain 10k: ${(10000*c.t).toLocaleString('fr-FR')} FCFA`,'══════════════════════════════',`  1XBET: Entrer code ${c.c}`,'  ⚠️ Pariez responsable +18'].join('\n');
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:'text/plain'}));a.download=`coupon_${c.c}.txt`;a.click();closeMo();toast('✅ Téléchargé!');
+  const t=['══════════════════════════════','  BETGENIUS AI — SÉLECTIONS 1XBET',`  Date: ${c.d}  Cote totale: ${c.t}`,'══════════════════════════════','  📱 COMMENT PARIER SUR 1XBET:','  1. Ouvrez 1XBET sur votre téléphone','  2. Allez dans Sports → Football','  3. Cherchez chaque match ci-dessous','  4. Appuyez sur la même cote (1, X ou 2)','  5. Validez le combiné et misez !','══════════════════════════════','  VOS SÉLECTIONS:',...c.s.map((s,i)=>`  ${i+1}. ${s.match}\n     ▶ Parier sur: ${s.pred}\n     ▶ Cote: ${s.cote}`),'══════════════════════════════',`  COTE TOTALE: ${c.t}`,`  Gain estimé 10 000 FCFA: ${(10000*c.t).toLocaleString('fr-FR')} FCFA`,'══════════════════════════════','  ⚠️ Jeu responsable +18'].join('\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:'text/plain'}));a.download=`selections_1xbet_${c.d.replace(/\//g,'-')}.txt`;a.click();closeMo();toast('✅ Téléchargé!');
 }
-
 function dlHTML(){
   const c=MDL;if(!c)return;
-  const h=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Coupon ${c.c}</title><style>body{background:#06090f;color:#ddeeff;font-family:sans-serif;display:flex;justify-content:center;padding:20px}.c{background:linear-gradient(135deg,#0a1830,#06101e);border:2px solid #ffd600;border-radius:14px;max-width:480px;width:100%;overflow:hidden}.ch{background:#0d1e3a;padding:14px 18px;border-bottom:2px solid rgba(255,214,0,.3);display:flex;justify-content:space-between}.logo{font-size:22px;letter-spacing:3px;color:#00e5ff;font-weight:900}.tc{font-size:30px;color:#ffd600;font-weight:900}.cs{background:#0a1525;margin:10px 16px;padding:11px;border-radius:8px;border:1px solid rgba(0,229,255,.3)}.cv{font-size:20px;color:#00e5ff;letter-spacing:5px;font-weight:700;margin-top:3px}.sr{display:flex;justify-content:space-between;padding:8px 16px;border-bottom:1px solid #1a2840}.sm{font-size:13px;font-weight:700}.sp{font-size:10px;color:#00e5ff}.sc{font-size:17px;color:#ffd600;font-weight:700}.tot{background:rgba(255,214,0,.05);padding:11px 16px;border-top:2px solid rgba(255,214,0,.25);display:flex;justify-content:space-between}.tv{font-size:32px;color:#ffd600;font-weight:900}.tg{font-size:17px;color:#00e676;font-weight:700}.ft{background:#050d1a;padding:9px 16px;font-size:9px;color:#2a4a6a;border-top:1px solid #1a2840}</style></head><body><div class="c"><div class="ch"><div class="logo">BetGenius AI</div><div style="text-align:right"><div style="font-size:8px;color:#4a6a8a">COTE TOTALE</div><div class="tc">${c.t}</div></div></div><div class="cs"><div style="font-size:8px;color:#4a6a8a;letter-spacing:2px">◈ CODE 1XBET</div><div class="cv">${c.c}</div></div><div style="font-size:8px;color:#4a6a8a;padding:4px 16px;border-bottom:1px solid #1a2840">SÉLECTIONS</div>${c.s.map(s=>`<div class="sr"><div><div class="sm">${s.match}</div><div class="sp">▶ ${s.pred}</div></div><div class="sc">${s.cote}</div></div>`).join('')}<div class="tot"><div><div style="font-size:8px;color:#4a6a8a">COTE</div><div class="tv">${c.t}</div></div><div style="text-align:right"><div style="font-size:10px;color:#4a6a8a">Gain 10k FCFA</div><div class="tg">≈ ${(10000*c.t).toLocaleString('fr-FR')} FCFA</div></div></div><div class="ft">Code: ${c.c} • ${c.d} • ⚠️ Pariez responsable +18</div></div></body></html>`;
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([h],{type:'text/html'}));a.download=`coupon_${c.c}.html`;a.click();closeMo();toast('✅ HTML!');
+  const h=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Sélections 1XBET</title><style>body{background:#06090f;color:#ddeeff;font-family:sans-serif;display:flex;justify-content:center;padding:20px}.c{background:linear-gradient(135deg,#0a1830,#06101e);border:2px solid #ffd600;border-radius:14px;max-width:480px;width:100%;overflow:hidden}.ch{background:#0d1e3a;padding:14px 18px;border-bottom:2px solid rgba(255,214,0,.3)}.logo{font-size:22px;letter-spacing:3px;color:#00e5ff;font-weight:900}.guide{background:#071020;padding:12px 18px;border-bottom:1px solid #1a2840;font-size:11px;line-height:1.9;color:#7ecfff}.sr{display:flex;justify-content:space-between;padding:10px 18px;border-bottom:1px solid #1a2840;align-items:center}.sm{font-size:13px;font-weight:700}.sp{font-size:10px;color:#00e5ff}.sc{font-size:20px;color:#ffd600;font-weight:700}.tot{background:rgba(255,214,0,.05);padding:12px 18px;border-top:2px solid rgba(255,214,0,.25);display:flex;justify-content:space-between}.tv{font-size:32px;color:#ffd600;font-weight:900}.tg{font-size:17px;color:#00e676}.ft{background:#050d1a;padding:10px 18px;font-size:9px;color:#2a4a6a;border-top:1px solid #1a2840}</style></head><body><div class="c"><div class="ch"><div class="logo">BetGenius AI — Sélections 1XBET</div><div style="font-size:11px;color:#4a6a8a;margin-top:3px">${c.d} • Cote totale: ${c.t}</div></div><div class="guide">📱 <b>Comment parier sur 1XBET:</b><br>1️⃣ Ouvrez 1XBET → Sports → Football<br>2️⃣ Cherchez chaque match ci-dessous<br>3️⃣ Appuyez sur la cote indiquée (1, X ou 2)<br>4️⃣ Validez le combiné → Misez !</div>${c.s.map((s,i)=>`<div class="sr"><div><div class="sm">${i+1}. ${s.match}</div><div class="sp">▶ Parier sur: ${s.pred}</div></div><div class="sc">${s.cote}</div></div>`).join('')}<div class="tot"><div><div style="font-size:9px;color:#4a6a8a">COTE TOTALE</div><div class="tv">${c.t}</div></div><div style="text-align:right"><div style="font-size:10px;color:#4a6a8a">Gain 10k FCFA</div><div class="tg">≈ ${(10000*c.t).toLocaleString('fr-FR')} FCFA</div></div></div><div class="ft">⚠️ Jeu responsable +18 • Ces sélections sont des suggestions, pas des garanties.</div></div></body></html>`;
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([h],{type:'text/html'}));a.download=`selections_1xbet_${c.d.replace(/\//g,'-')}.html`;a.click();closeMo();toast('✅ HTML sauvegardé!');
 }
 
-// ═══════════════════════════════
-// IA ANALYSE
-// ═══════════════════════════════
+function filterHC(min,el){
+  HC_MIN=min;
+  document.querySelectorAll('[id^="hcbtn"]').forEach(b=>{b.style.borderColor='var(--border)';b.style.color='var(--muted)';b.style.background='transparent';});
+  el.style.borderColor='rgba(255,214,0,.4)';el.style.color='var(--gold)';el.style.background='rgba(255,214,0,.1)';
+  renderHC();
+}
+
+function renderHC(){
+  if(!FX.length){document.getElementById('hcList').innerHTML='<div class="emp">Chargez les matchs d\'abord.</div>';return;}
+  const strategies=[
+    {name:'🎯 OUTSIDERS SÉLECTIONNÉS',color:'var(--gold)',picks:buildCoupon(FX,'outsider',HC_MIN)},
+    {name:'⚡ COTES MAXIMALES',color:'var(--red)',picks:buildCoupon(FX,'max',HC_MIN)},
+    {name:'🔥 COMBO EXPLOSIF',color:'var(--orange)',picks:buildCoupon(FX,'combo',HC_MIN)},
+    {name:'💎 BTTS HAUTE COTE',color:'#a78bfa',picks:buildCoupon(FX,'double',HC_MIN)},
+    {name:'🌟 MEGA COTE',color:'var(--gold2)',picks:buildCoupon(FX,'mega',HC_MIN*5)},
+  ];
+  let html='';
+  strategies.forEach((s,idx)=>{
+    if(!s.picks||!s.picks.length)return;
+    const tot=Math.round(s.picks.reduce((a,p)=>a*p.cote,1)*100)/100;
+    if(tot<HC_MIN)return;
+    html+=`<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 13px;background:rgba(255,255,255,.03);border-bottom:1px solid var(--border);">
+        <div><div style="font-family:'Bebas Neue';font-size:14px;letter-spacing:1px;color:${s.color}">${s.name}</div><div style="font-size:9px;color:var(--muted);font-family:'Share Tech Mono'">${s.picks.length} sélections • À saisir sur 1XBET</div></div>
+        <div style="text-align:right"><div style="font-family:'Bebas Neue';font-size:22px;color:${s.color}">${tot}</div><div style="font-size:9px;color:var(--muted);font-family:'Share Tech Mono'">≈ ${(10000*tot).toLocaleString('fr-FR')} FCFA</div></div>
+      </div>
+      ${s.picks.map(p=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 13px;border-bottom:1px solid var(--border);">
+        <div><div style="font-size:11px;font-weight:700;">${p.match.substring(0,28)}</div><div style="font-size:9px;color:var(--accent);font-family:'Share Tech Mono'">▶ Parier: ${p.pred}</div></div>
+        <div style="font-family:'Bebas Neue';font-size:18px;color:${s.color}">${p.cote}</div>
+      </div>`).join('')}
+      <div style="padding:8px 13px;display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+        <button onclick="loadHCCoupon(${idx})" style="padding:9px;background:rgba(255,214,0,.08);border:1px solid rgba(255,214,0,.3);border-radius:7px;color:var(--gold);font-family:'Bebas Neue';font-size:11px;cursor:pointer;">📋 CHARGER</button>
+        <button onclick="loadHCAndOpen(${idx})" style="padding:9px;background:linear-gradient(90deg,#c8a000,#ffd600);border:none;border-radius:7px;color:#000;font-family:'Bebas Neue';font-size:11px;cursor:pointer;">🎰 1XBET →</button>
+      </div>
+    </div>`;
+  });
+  if(!html)html=`<div class="emp">Pas assez de matchs avec cote ≥ ${HC_MIN}.<br>Essayez une cote plus basse.</div>`;
+  document.getElementById('hcList').innerHTML=html;
+  window._hcStrategies=strategies;
+}
+
+function buildCoupon(fixtures,strategy,targetCote){
+  const picks=[],maxPicks=strategy==='mega'?8:5;
+  let sorted=[...fixtures];
+  if(strategy==='outsider'||strategy==='mega')sorted.sort((a,b)=>Math.max(b._o?.a||0,b._o?.h||0)-Math.max(a._o?.a||0,a._o?.h||0));
+  else if(strategy==='max')sorted.sort((a,b)=>Math.max(b._o?.h||0,b._o?.d||0,b._o?.a||0)-Math.max(a._o?.h||0,a._o?.d||0,a._o?.a||0));
+  else if(strategy==='combo')sorted.sort((a,b)=>(b._o?.a||0)-(a._o?.a||0));
+  else if(strategy==='double')sorted.sort((a,b)=>(b._o?.bty||0)-(a._o?.bty||0));
+  const used=new Set();
+  for(const f of sorted){
+    if(picks.length>=maxPicks)break;
+    if(!f._o||used.has(f.fixture?.id))continue;
+    const id=f.fixture?.id,ht=f.teams?.home?.name||'?',at=f.teams?.away?.name||'?';
+    let pred,cote;
+    if(strategy==='double'){pred='BTTS Oui';cote=f._o.bty;}
+    else if(strategy==='outsider'||strategy==='mega'){if(f._o.a>f._o.h){pred=at+' Gagne';cote=f._o.a;}else{pred=ht+' Gagne';cote=f._o.h;}}
+    else if(strategy==='combo'){pred=at+' Gagne';cote=f._o.a;}
+    else{const best=Math.max(f._o.h,f._o.d,f._o.a,f._o.o25);if(best===f._o.h){pred=ht+' Gagne';cote=f._o.h;}else if(best===f._o.d){pred='Nul';cote=f._o.d;}else if(best===f._o.a){pred=at+' Gagne';cote=f._o.a;}else{pred='Plus 2.5';cote=f._o.o25;}}
+    if(cote>=1.3){picks.push({fid:id,match:`${ht} vs ${at}`,pred,cote:Math.round(cote*100)/100});used.add(id);}
+  }
+  return picks;
+}
+
+function loadHCCoupon(idx){
+  const s=window._hcStrategies?.[idx];if(!s||!s.picks.length)return;
+  CPN=[];document.querySelectorAll('.ob.on,.ob2.on').forEach(b=>b.classList.remove('on'));
+  s.picks.forEach(p=>{CPN.push({fid:p.fid,match:p.match,pred:p.pred,cote:p.cote});});
+  renderC();toast(`✅ ${CPN.length} sélections chargées !`);
+}
+function loadHCAndOpen(idx){loadHCCoupon(idx);setTimeout(()=>openMo(),300);}
+function open1xbet(){window.open('https://1xbet.com/fr/live/','_blank');toast('🎰 Ouverture 1XBET...');}
+
 function iaL(){
   const top=FX.filter(f=>['NS','TBD'].includes(f.fixture?.status?.short)).slice(0,8);
   if(!top.length)return;
-  document.getElementById('iaL').innerHTML=top.map(f=>`
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:9px;padding:9px;margin-bottom:7px;cursor:pointer;" onclick="qAI('${(f.teams?.home?.name||'').replace(/'/g,'')}','${(f.teams?.away?.name||'').replace(/'/g,'')}','${f.league?.name||''}')">
-      <div style="font-size:8px;color:var(--muted);font-family:'Share Tech Mono'">${f.league?.name||''} • ${f.league?.country||''}</div>
-      <div style="font-size:12px;font-weight:700;margin:2px 0;">${f.teams?.home?.name||''} <span style="color:var(--muted)">vs</span> ${f.teams?.away?.name||''}</div>
-      <div style="font-size:10px;color:var(--accent);">🤖 Analyser ce match →</div>
-    </div>`).join('');
+  document.getElementById('iaL').innerHTML=top.map(f=>`<div style="background:var(--card);border:1px solid var(--border);border-radius:9px;padding:9px;margin-bottom:7px;cursor:pointer;" onclick="qAI('${(f.teams?.home?.name||'').replace(/'/g,'')}','${(f.teams?.away?.name||'').replace(/'/g,'')}','${f.league?.name||''}')"><div style="font-size:8px;color:var(--muted);font-family:'Share Tech Mono'">${f.league?.name||''}</div><div style="font-size:12px;font-weight:700;">${f.teams?.home?.name||''} vs ${f.teams?.away?.name||''}</div><div style="font-size:10px;color:var(--accent);margin-top:2px;">🤖 Analyser →</div></div>`).join('');
 }
-
 function qAI(h,a,l){document.getElementById('aiInp').value=`Analyse ${h} vs ${a} (${l}). Prédiction et cotes 1XBET.`;askAI();}
 
 async function askAI(){
   const inp=document.getElementById('aiInp'),q=inp.value.trim();if(!q)return;
   const r=document.getElementById('aiR'),t=document.getElementById('aiTh'),o=document.getElementById('aiO');
   r.classList.add('v');t.style.display='flex';o.classList.remove('v');o.innerHTML='';
-  const ctx=FX.slice(0,10).map(f=>`${f.teams?.home?.name} vs ${f.teams?.away?.name} (${f.league?.name}, ${f.fixture?.status?.short})`).join('\n');
+  const ctx=FX.slice(0,8).map(f=>`${f.teams?.home?.name} vs ${f.teams?.away?.name} (${f.league?.name})`).join('\n');
   try{
-    const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,
-        system:`Tu es BetGenius AI. Matchs du jour:\n${ctx}\nDonne: prédiction, cote 1XBET, confiance %, 2-3 arguments clés, conseil mise. En français.`,
-        messages:[{role:"user",content:q}]})});
+    const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,system:`Tu es BetGenius AI. Matchs du jour:\n${ctx}\nDonne prédiction, cote 1XBET, confiance %, arguments. En français.`,messages:[{role:"user",content:q}]})});
     const d=await res.json();
-    t.style.display='none';
-    o.innerHTML=(d.content?.[0]?.text||"Indisponible.").replace(/\n/g,'<br>');
-    o.classList.add('v');
+    t.style.display='none';o.innerHTML=(d.content?.[0]?.text||"Indisponible.").replace(/\n/g,'<br>');o.classList.add('v');
   }catch(e){t.style.display='none';o.innerHTML='⚠️ Erreur IA.';o.classList.add('v');}
   inp.value='';
 }
+document.getElementById('aiInp').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();askAI();}});
 
-document.getElementById('aiInp').addEventListener('keydown',e=>{
-  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();askAI();}
-});
+function toggleLg(id,hdr){const el=document.getElementById(id),arrow=hdr.querySelector('.lg-arrow');el.classList.toggle('open');arrow.classList.toggle('open');}
+function setBadge(txt,type){const b=document.getElementById('apiBadge'),c={g:'var(--green)',r:'var(--red)',o:'var(--orange)'};b.textContent=txt;b.style.color=c[type];b.style.borderColor=c[type]+'55';b.style.background=c[type]+'18';}
+function sw(id,tabEl,navEl){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));document.getElementById('pg-'+id).classList.add('on');if(tabEl){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));tabEl.classList.add('on');}if(navEl){document.querySelectorAll('.ni').forEach(n=>n.classList.remove('on'));navEl.classList.add('on');}}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('v');setTimeout(()=>t.classList.remove('v'),2500);}
 
-// ═══════════════════════════════
-// UI UTILS
-// ═══════════════════════════════
-function setBadge(txt,type){
-  const b=document.getElementById('apiBadge');
-  const c={g:'var(--green)',r:'var(--red)',o:'var(--orange)'};
-  b.textContent=txt;b.style.color=c[type];
-  b.style.borderColor=c[type]+'55';b.style.background=c[type]+'18';
-}
-
-function sw(id,tabEl,navEl){
-  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
-  document.getElementById('pg-'+id).classList.add('on');
-  if(tabEl){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));tabEl.classList.add('on');}
-  if(navEl){document.querySelectorAll('.ni').forEach(n=>n.classList.remove('on'));navEl.classList.add('on');}
-}
-
-function toast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('v');
-  setTimeout(()=>t.classList.remove('v'),2500);
-}
-
-// ═══════════════════════════════
-// INIT
-// ═══════════════════════════════
-load();
-renderC();
-setInterval(()=>{
-  if(FX.some(f=>['1H','2H','HT','ET','P'].includes(f.fixture?.status?.short))) loadLive();
-},60000);
+load();renderC();
+setInterval(()=>{if(FX.some(f=>['1H','2H','HT','ET','P'].includes(f.fixture?.status?.short)))loadLive();},60000);
 </script>
 </body>
 </html>
+</div>
+<div class="toast" id="toast"></div> 
