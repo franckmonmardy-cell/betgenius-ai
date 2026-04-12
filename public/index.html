@@ -577,7 +577,7 @@ async function askAI(){
   try{
     const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,system:`Tu es BetGenius AI. Matchs du jour:\n${ctx}\nDonne prédiction, cote 1XBET, confiance %, arguments. En français.`,messages:[{role:"user",content:q}]})});
     const d=await res.json();
-    t.style.display='none';o.innerHTML=(d.content?.[0]?.text||"Indisponible.").replace(/\n/g,'<br>');o.classList.add('v');
+    t.style.display='none';o.innerHTML=(d.content?.[0]?.text||"Indisponible.").replace(/\n/g,'<br>');o.classList.add('v');showBookmakers()t.style.display='none';o.innerHTML=(d.content?.[0]?.text||"Indisponible.").rep...;showBookmakers()
   }catch(e){t.style.display='none';o.innerHTML='⚠️ Erreur IA.';o.classList.add('v');}
   inp.value='';
 }
@@ -590,7 +590,259 @@ function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t
 
 load();renderC();
 setInterval(()=>{if(FX.some(f=>['1H','2H','HT','ET','P'].includes(f.fixture?.status?.short)))loadLive();},60000);
+</script><!-- =<style>#bk-s{margin-top:28px;display:none}.bk-t{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#a0aec0;margin-bottom:14px;display:flex;align-items:center;gap:8px}.bk-t::before,.bk-t::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.08)}.bk-g{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.bk-c{background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px=<div id="bk-s"><p class="bk-t">Pariez ici</p><div class="bk-g"><a class="bk-c" href="https://akwabet.com" target="_blank" rel="noopener" style="--bc:#e11d48"><span class="bk-badge">Légal CI</span><div class="bk-l">AK</div><div class="bk-i"><div class="bk-n">Akwabet</div><div class="bk-b">Meilleures cotes CI</div></div><span class="bk-btn">Rejoindre</span></a><a class="bk-c" href="https://reffpa.com/L?tag=d_5474007m_97c_&site=5474007&ad=97" target="_blank" rel="noopener" style="--bc:#2563eb"><span class="bk-badge">Légal CI</span><div class="bk-l">1X</div><div class="bk-i"><div class="bk-n">1xBet</div><div class="bk-b">Bonus jusqu'à 130 000 XOF</div></div><span class="bk-btn">Rejoindre</span></a><a class="bk-c" href="https://www.betclic.com/ci" target="_blank" rel="noopener" style="--bc:#f59e0b"><span class="bk-badge">Légal CI</span><div class="bk-l">BC</div><div class="bk-i"><div class="bk-n">Betclic</div><div class="bk-b">App iOS recommandée</div></div><span class="bk-btn">Rejoindre</span></a><a class="bk-c" href="https://www.premierbet.com/ci" target="_blank" rel="noopener" style="--bc:#7c3aed"><span class="bk-badge">Légal CI</span><div class="bk-l">PB</div><div class="bk-i"><div class="bk-n">Premier Bet</div><div class="bk-b">Très populaire en CI</div></div><span class="bk-btn">Rejoindre</span></a><a class="bk-c" href="https://www.chopbet.ci" target="_blank" rel="noopener" style="--bc:#16a34a"><span class="bk-badge">Légal CI</span><div class="bk-l">CB</div><div class="bk-i"><div class="bk-n">Chopbet</div><div class="bk-b">Cotes compétitives</div></div><span class="bk-btn">Rejoindre</span></a><a class="bk-c" href="https://www.sportcash.net" target="_blank" rel="noopener" style="--bc:#0891b2"><span class="bk-badge">Légal CI</span><div class="bk-l">SC</div><div class="bk-i"><div class="bk-n">Sportcash</div><div class="bk-b">Officiel LONACI</div></div><span class="bk-btn">Rejoindre</span></a></div></diAI=<script>function showBookmakers(){const s=document.getElementById('bk-s');if(s){s.style.display='block';s.style.opacity='0';s.style.transform='translateY(12px)';s.style.transition='opacity .4s ease,transform .4s ease';requestAnimationFrame(()=>requestAnimationFrame(()=>{s.style.opacity='1';s.style.transform='translateY(0)'}));}}</script>=======================================================
+     BLOC BOOKMAKERS AFFILIÉS — BetGenius AI
+     À insérer dans index.html juste après le bloc #coupon-result
+     Remplace chaque href="#LIEN-AFFILIÉ-XXX" par ton vrai lien
+     ============================================================ -->
+
+<style>
+  /* ── Section bookmakers ── */
+  #bookmakers-section {
+    margin-top: 28px;
+    display: none; /* affiché par JS après génération du coupon */
+  }
+
+  #bookmakers-section .bk-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #a0aec0;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #bookmakers-section .bk-title::before,
+  #bookmakers-section .bk-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .bk-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .bk-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 14px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bk-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--bk-color, #f59e0b);
+    opacity: 0;
+    transition: opacity 0.18s ease;
+    border-radius: 12px;
+  }
+
+  .bk-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--bk-color, #f59e0b);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .bk-card:hover::before { opacity: 0.06; }
+
+  .bk-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    color: #fff;
+    background: var(--bk-color, #f59e0b);
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    letter-spacing: -0.5px;
+  }
+
+  .bk-info {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .bk-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #f0f0f0;
+    margin-bottom: 2px;
+  }
+
+  .bk-bonus {
+    font-size: 10px;
+    color: var(--bk-color, #f59e0b);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .bk-btn {
+    display: block;
+    width: 100%;
+    padding: 6px 0;
+    background: var(--bk-color, #f59e0b);
+    color: #000;
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+    border-radius: 7px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.15s;
+  }
+
+  .bk-card:hover .bk-btn { opacity: 0.88; }
+
+  /* Badge "Légal CI" */
+  .bk-badge {
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    font-size: 8px;
+    font-weight: 700;
+    background: rgba(34,197,94,0.15);
+    color: #4ade80;
+    border: 1px solid rgba(74,222,128,0.3);
+    border-radius: 4px;
+    padding: 1px 5px;
+    letter-spacing: 0.05em;
+    z-index: 2;
+  }
+</style>
+
+<!-- Bloc HTML à insérer après #coupon-result -->
+<div id="bookmakers-section">
+  <p class="bk-title">Pariez ici</p>
+  <div class="bk-grid">
+
+    <!-- 1. Akwabet -->
+    <a class="bk-card" href="https://akwabet.com" target="_blank" rel="noopener"
+       style="--bk-color:#e11d48;">
+      <span class="bk-badge">Légal CI</span>
+      <div class="bk-logo">AK</div>
+      <div class="bk-info">
+        <div class="bk-name">Akwabet</div>
+        <div class="bk-bonus">Meilleures cotes CI</div>
+      </div>
+      <span class="bk-btn">Rejoindre</span>
+    </a>
+
+    <!-- 2. 1xBet -->
+    <a class="bk-card" href="https://reffpa.com/L?tag=d_5474007m_97c_&site=5474007&ad=97" target="_blank" rel="noopener"
+       style="--bk-color:#2563eb;">
+      <span class="bk-badge">Légal CI</span>
+      <div class="bk-logo">1X</div>
+      <div class="bk-info">
+        <div class="bk-name">1xBet</div>
+        <div class="bk-bonus">Bonus jusqu'à 130 000 XOF</div>
+      </div>
+      <span class="bk-btn">Rejoindre</span>
+    </a>
+
+    <!-- 3. Betclic -->
+    <a class="bk-card" href="https://www.betclic.com/ci" target="_blank" rel="noopener"
+       style="--bk-color:#f59e0b;">
+      <span class="bk-badge">Légal CI</span>
+      <div class="bk-logo">BC</div>
+      <div class="bk-info">
+        <div class="bk-name">Betclic</div>
+        <div class="bk-bonus">App iOS recommandée</div>
+      </div>
+      <span class="bk-btn">Rejoindre</span>
+    </a>
+
+    <!-- 4. Premier Bet -->
+    <a class="bk-card" href="https://www.premierbet.com/ci" target="_blank" rel="noopener"
+       style="--bk-color:#7c3aed;">
+      <span class="bk-badge">Légal CI</span>
+      <div class="bk-logo">PB</div>
+      <div class="bk-info">
+        <div class="bk-name">Premier Bet</div>
+        <div class="bk-bonus">Très populaire en CI</div>
+      </div>
+      <span class="bk-btn">Rejoindre</span>
+    </a>
+
+    <!-- 5. Chopbet -->
+    <a class="bk-card" href="https://www.chopbet.ci" target="_blank" rel="noopener"
+       style="--bk-color:#16a34a;">
+      <span class="bk-badge">Légal CI</span>
+      <div class="bk-logo">CB</div>
+      <div class="bk-info">
+        <div class="bk-name">Chopbet</div>
+        <div class="bk-bonus">Cotes compétitives</div>
+      </div>
+      <span class="bk-btn">Rejoindre</span>
+    </a>
+
+    <!-- 6. Sportcash -->
+    <a class="bk-card" href="https://www.sportcash.net" target="_blank" rel="noopener"
+       style="--bk-color:#0891b2;">
+      <span class="bk-badge">Légal CI</span>
+      <div class="bk-logo">SC</div>
+      <div class="bk-info">
+        <div class="bk-name">Sportcash</div>
+        <div class="bk-bonus">Officiel LONACI</div>
+      </div>
+      <span class="bk-btn">Rejoindre</span>
+    </a>
+
+  </div>
+</div>
+
+<!-- ============================================================
+     JS — À ajouter dans ton script existant
+     Appelle showBookmakers() après avoir affiché le coupon
+     ============================================================ -->
+<script>
+  function showBookmakers() {
+    const section = document.getElementById('bookmakers-section');
+    if (section) {
+      section.style.display = 'block';
+      // Animation d'apparition douce
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(12px)';
+      section.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          section.style.opacity = '1';
+          section.style.transform = 'translateY(0)';
+        });
+      });
+    }
+  }
+
+  // Exemple d'appel — à placer là où tu affiches ton coupon :
+  // showBookmakers();
 </script>
+
 </body>
 </html>
 </div>
